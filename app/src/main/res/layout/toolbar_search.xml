@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:background="@color/colorPrimary"
+    android:elevation="10dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/backButton"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_centerVertical="true"
+        android:src="@drawable/arrow_back_blue"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/searchNews"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/margin_normal"
+        android:paddingEnd="@dimen/margin_normal"
+        android:background="@drawable/edittext_border"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/hk_grotesk_bold"
+        android:textSize="@dimen/text_normal"
+        android:layout_marginEnd="@dimen/margin_normal"
+        android:hint="@string/hint_search"
+        android:drawableEnd="@drawable/ic_search"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/logo"
+        android:layout_width="60dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/img_dirumahaja" />
+
+</RelativeLayout>

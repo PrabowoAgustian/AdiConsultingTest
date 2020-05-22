@@ -1,0 +1,131 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="Loading" parent="AVLoadingIndicatorView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="indicatorName">BallSpinFadeLoaderIndicator</item>
+        <item name="indicatorColor">@color/grey</item>
+    </style>
+
+    <style name="normalTextViewBlack" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:lineSpacingExtra">1.5dp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">@dimen/text_normal</item>
+    </style>
+
+    <style name="normalHkBlackTextView" parent="normalTextViewBlack">
+        <item name="android:fontFamily">@font/hk_grotesk_black</item>
+    </style>
+
+    <style name="normalTextViewBold" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:lineSpacingExtra">1.5dp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">@dimen/text_normal</item>
+    </style>
+
+    <style name="normalHkBoldTextView" parent="normalTextViewBold">
+        <item name="android:fontFamily">@font/hk_grotesk_bold</item>
+    </style>
+
+    <style name="CardNormal" parent="Theme.MaterialComponents">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="cardCornerRadius">@dimen/card_radius</item>
+        <item name="android:layout_marginTop">@dimen/margin_medium</item>
+        <item name="android:layout_marginStart">@dimen/margin_medium</item>
+        <item name="android:layout_marginEnd">@dimen/margin_medium</item>
+        <item name="android:layout_marginBottom">@dimen/margin_medium</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="cardUseCompatPadding">false</item>
+    </style>
+
+    <style name="headerTextViewBlack" parent="normalTextViewBlack">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_very_large</item>
+    </style>
+
+    <style name="headerHkBoldTextView" parent="headerTextViewBlack">
+        <item name="android:fontFamily">@font/hk_grotesk_bold</item>
+    </style>
+
+    <style name="mediumTextViewBlack" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:lineSpacingExtra">1.5dp</item>
+        <item name="android:textSize">@dimen/text_medium</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="mediumHkBoldTextView" parent="mediumTextViewBlack">
+        <item name="android:fontFamily">@font/hk_grotesk_bold</item>
+    </style>
+
+    <style name="largeTextViewBold" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:lineSpacingExtra">1.5dp</item>
+        <item name="android:textSize">@dimen/text_large</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="largeHkBoldTextView" parent="largeTextViewBold">
+        <item name="android:fontFamily">@font/hk_grotesk_bold</item>
+    </style>
+
+    <style name="AppTheme.noActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="bottomShadow" parent="AppTheme.noActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">10dp</item>
+        <item name="android:background">@drawable/shadow_black</item>
+    </style>
+
+    <style name="upShadow" parent="bottomShadow">
+        <item name="android:background">@drawable/up_shadow_black</item>
+    </style>
+
+    <style name="Line" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">#19000000</item>
+    </style>
+
+    <style name="Devider" parent="Line">
+        <item name="android:layout_height">@dimen/margin_large</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+    <style name="ViewFullScreen" parent="Line">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">#60000000</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <color name="transparent">#00000000</color>
+
+</resources>

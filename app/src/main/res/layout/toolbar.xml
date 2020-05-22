@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="@color/colorPrimary"
+    android:elevation="10dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/img_dirumahaja" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/profileButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="@dimen/margin_normal"
+        android:src="@drawable/ic_profile"
+        android:layout_alignParentEnd="true"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/searchNews"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/margin_normal"
+        android:paddingEnd="@dimen/margin_normal"
+        android:background="@drawable/edittext_border"
+        android:layout_toEndOf="@+id/logo"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/hk_grotesk_bold"
+        android:textSize="@dimen/text_normal"
+        android:layout_marginEnd="@dimen/margin_normal"
+        android:hint="@string/hint_search"
+        android:drawableEnd="@drawable/ic_search"/>
+
+</RelativeLayout>

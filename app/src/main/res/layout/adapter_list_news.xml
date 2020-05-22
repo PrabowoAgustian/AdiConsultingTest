@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_normal"
+    android:layout_marginStart="@dimen/margin_small"
+    android:layout_marginEnd="@dimen/margin_small"
+    android:background="@color/colorPrimary">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/newImageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/news_image"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_toRightOf="@id/newImageView">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleNewsTextview"
+            style="@style/mediumHkBoldTextView"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:textSize="@dimen/text_large"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@id/subTitleNewsTextview"
+            style="@style/mediumTextViewBlack"
+            android:maxLines="3"
+            android:layout_below="@id/titleNewsTextview"
+            android:textSize="@dimen/text_medium"
+            android:textColor="@color/grey"
+            android:ellipsize="end"
+            android:visibility="gone"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/authorTextview"
+            style="@style/normalHkBoldTextView"
+            android:textColor="@color/grey"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_below="@id/newImageView"
+        android:background="@color/colorAccent" />
+
+</RelativeLayout>

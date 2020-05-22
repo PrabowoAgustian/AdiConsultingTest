@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_normal">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sectionNewsTextView"
+        style="@style/mediumHkBoldTextView"
+        android:text="@string/label_quote"
+        android:textColor="@color/soft_blue"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titleNewsTextview"
+        style="@style/largeHkBoldTextView"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="Perkembangan Covid-19"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:layout_marginBottom="@dimen/margin_normal"
+        android:layout_below="@id/newImageView"
+        android:background="@color/colorAccent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/byLineNewsTextView"
+        style="@style/normalHkBoldTextView"
+        android:layout_marginBottom="@dimen/margin_very_very_small"
+        android:text="Prabowo"
+        android:textColor="@color/grey"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dateNewsTextView"
+        style="@style/normalHkBoldTextView"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:text="Sabtu, 4 April 2020 08:15"
+        android:textColor="@color/grey"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/contentNewsTextView"
+        style="@style/mediumHkBoldTextView"
+        android:text="Sabtu, 4 April 2020 08:15"
+        android:textColor="@color/grey"/>
+
+</LinearLayout>

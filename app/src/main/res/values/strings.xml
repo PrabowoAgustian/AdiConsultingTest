@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">ADICONSULTING-TEST</string>
+    <string name="label_navigation_home">Home</string>
+    <string name="label_navigation_layanan">Layanan</string>
+    <string name="label_navigation_kategori">Kategori</string>
+    <string name="label_navigation_video">Video</string>
+    <string name="label_cancel">Cancel</string>
+    <string name="label_ok">OK</string>
+    <string name="label_info">Info</string>
+    <string name="label_error">Error</string>
+    <string name="label_success">Success</string>
+    <string name="label_failed">Failed</string>
+    <string name="label_loading">Please Wait</string>
+
+    <string name="label_something_when_wrong">Something when wrong, please try again</string>
+    <string name="label_news_portal">News Portal</string>
+    <string name="dummy_data"># Section</string>
+    <string name="label_top_headline">#Top Headline News</string>
+    <string name="label_quote">#DiRumahAjaNews</string>section_name_id
+    <string name="label_result_search">Hasil pencarian</string>
+    <string name="hint_search">Search...</string>
+</resources>

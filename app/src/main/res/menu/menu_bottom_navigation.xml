@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@drawable/ic_home"
+        android:id="@+id/new_navigation_home"
+        android:title="@string/label_navigation_home" />
+    <item
+        android:icon="@drawable/ic_layanan_uncheck"
+        android:id="@+id/new_navigation_layanan"
+        android:title="@string/label_navigation_layanan" />
+    <item
+        android:icon="@drawable/ic_category_uncheck"
+        android:id="@+id/new_navigation_kategori"
+        android:title="@string/label_navigation_kategori" />
+
+    <item
+        android:icon="@drawable/ic_video_uncheck"
+        android:id="@+id/new_navigation_video"
+        android:title="@string/label_navigation_video" />
+</menu>
