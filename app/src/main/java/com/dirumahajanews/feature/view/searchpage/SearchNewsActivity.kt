@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import butterknife.BindString
 import butterknife.OnClick
 import com.dirumahajanews.R
@@ -19,11 +20,12 @@ import com.dirumahajanews.pojo.common.Response
 import com.dirumahajanews.pojo.response.NewsTopHeadline
 import com.mikepenz.fastadapter.commons.adapters.FastItemAdapter
 import kotlinx.android.synthetic.main.activity_search_news.*
+import kotlinx.android.synthetic.main.activity_search_news.swipeRefresh
 import kotlinx.android.synthetic.main.content_section_news.newsRecycleView
 import kotlinx.android.synthetic.main.toolbar_search.*
 
-@Suppress("UNCHECKED_CAST")
-class SearchNewsActivity : BaseDaggerActivity<SearchNewsViewModel>() {
+@Suppress("UNCHECKED_CAST", "DEPRECATION")
+class SearchNewsActivity : BaseDaggerActivity<SearchNewsViewModel>(), SwipeRefreshLayout.OnRefreshListener {
 
     private val newsAdapter = FastItemAdapter<ListNewsAdapter>()
 
@@ -43,6 +45,8 @@ class SearchNewsActivity : BaseDaggerActivity<SearchNewsViewModel>() {
     }
 
     private fun initComponent() {
+        swipeRefresh.setOnRefreshListener(this)
+        swipeRefresh.setProgressBackgroundColorSchemeColor(resources.getColor(R.color.soft_blue))
         configureItemAdapter(newsRecycleView, newsAdapter)
         searchNews.addTextChangedListener(object : TextWatcher{
             override fun afterTextChanged(s: Editable?) {}
@@ -60,6 +64,16 @@ class SearchNewsActivity : BaseDaggerActivity<SearchNewsViewModel>() {
         if (searchNews.text.toString().length >= 5){
             viewModel.getListEverythingNews(searchNews.text.toString())
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        viewModel.unBinding()
+    }
+
+    override fun onRefresh() {
+        swipeRefresh.isRefreshing = false
+        loadData()
     }
 
     override fun doOnResponseSuccess(response: Response) {

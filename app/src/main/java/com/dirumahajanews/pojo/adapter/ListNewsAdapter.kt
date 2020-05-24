@@ -39,7 +39,10 @@ class ListNewsAdapter (var newsTopHeadline: NewsTopHeadline) : AbstractItem<List
     ) {
         super.bindView(holder, payloads)
         holder.titleNews.text = newsTopHeadline.title
-        GlideUtils.setFotoRoundedWithUrl(holder.context, newsTopHeadline.urlToImage, holder.newsImage)
+        newsTopHeadline.urlToImage?.let {
+            GlideUtils.setFotoRoundedWithUrl(holder.context,
+                it, holder.newsImage)
+        }
         holder.authorNews.text = TimeHelper.getDateFormatedNew(newsTopHeadline.publishedAt)?.let {
             StringHelper.getStringBuilderToString(newsTopHeadline.author," | ",
                 it

@@ -2,6 +2,7 @@ package com.dirumahajanews.feature.view.main
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import butterknife.OnClick
 import com.dirumahajanews.constant.Constanta
 import com.dirumahajanews.constant.LiveDataTag
@@ -23,8 +24,8 @@ import kotlinx.android.synthetic.main.activity_homepage.*
 import kotlinx.android.synthetic.main.content_header_home.*
 import kotlinx.android.synthetic.main.content_section_news.*
 
-@Suppress("UNCHECKED_CAST")
-class HomeActivity : MainActivity<HomeViewModel>(){
+@Suppress("UNCHECKED_CAST", "DEPRECATION")
+class HomeActivity : MainActivity<HomeViewModel>(), SwipeRefreshLayout.OnRefreshListener {
 
     private val categorNewsAdapter = FastItemAdapter<ListCategoryAdapter>()
     private val topHeadlineAdapter = FastItemAdapter<ListNewsAdapter>()
@@ -48,6 +49,8 @@ class HomeActivity : MainActivity<HomeViewModel>(){
     }
 
     private fun initComponent() {
+        swipeRefresh.setOnRefreshListener(this)
+        swipeRefresh.setProgressBackgroundColorSchemeColor(resources.getColor(R.color.soft_blue))
         configureItemAdapter(newsRecycleView, topHeadlineAdapter)
     }
 
@@ -59,6 +62,16 @@ class HomeActivity : MainActivity<HomeViewModel>(){
     private fun initData() {
         viewModel.getListCategory()
         viewModel.getListTopHeadlineNews()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        viewModel.unBinding()
+    }
+
+    override fun onRefresh() {
+        swipeRefresh.isRefreshing = false
+        initData()
     }
 
     override fun doOnResponseSuccess(response: Response) {
@@ -88,8 +101,10 @@ class HomeActivity : MainActivity<HomeViewModel>(){
         }
 
         list[0].urlToImage.let {
-            GlideUtils.setFotoWithUrl(this,
-                it, imageHeaderNews)
+            it?.let { it1 ->
+                GlideUtils.setFotoWithUrl(this,
+                    it1, imageHeaderNews)
+            }
         }
         titleNewsTextview.text = list[0].title
         subTitleNewsTextview.text = StringHelper.getStringBuilderToString(list[0].author," | ",

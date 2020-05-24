@@ -194,4 +194,8 @@ open class BaseViewModel (private val baseUseCase: BaseUseCase) : ViewModel() {
     protected fun <T> getDataList(data: Any?, type: Type): T? {
         return baseUseCase.getJsonParser()?.getObjects(data, type)
     }
+
+    open fun unBinding() {
+        onCleared()
+    }
 }

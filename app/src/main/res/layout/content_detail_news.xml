@@ -15,35 +15,38 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/titleNewsTextview"
         style="@style/largeHkBoldTextView"
-        android:layout_marginTop="@dimen/margin_small"
-        android:text="Perkembangan Covid-19"/>
+        android:layout_marginTop="@dimen/margin_small"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="@dimen/margin_normal"
         android:layout_marginBottom="@dimen/margin_normal"
-        android:layout_below="@id/newImageView"
         android:background="@color/colorAccent" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/byLineNewsTextView"
         style="@style/normalHkBoldTextView"
         android:layout_marginBottom="@dimen/margin_very_very_small"
-        android:text="Prabowo"
         android:textColor="@color/grey"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/dateNewsTextView"
         style="@style/normalHkBoldTextView"
         android:layout_marginBottom="@dimen/margin_small"
-        android:text="Sabtu, 4 April 2020 08:15"
         android:textColor="@color/grey"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/contentNewsTextView"
         style="@style/mediumHkBoldTextView"
-        android:text="Sabtu, 4 April 2020 08:15"
         android:textColor="@color/grey"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/urlNewsTextView"
+        style="@style/mediumHkBoldTextView"
+        android:textColorLink="@color/blue"
+        android:textStyle="italic"
+        android:autoLink="all"
+        android:clickable="true"/>
 
 </LinearLayout>

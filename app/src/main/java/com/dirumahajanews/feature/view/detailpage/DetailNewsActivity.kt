@@ -31,11 +31,12 @@ class DetailNewsActivity : BaseActivity() {
     private fun initData() {
         val newsTopHeadline : NewsTopHeadline = intent.getParcelableExtra(Constanta.dataTopHeadline)
         sectionNewsTextView.text = StringHelper.getStringBuilderToString(labelQuote, " | ", newsTopHeadline.source.name)
-        GlideUtils.setFotoWithUrl(this, newsTopHeadline.urlToImage, imageHeaderNews)
+        newsTopHeadline.urlToImage?.let { GlideUtils.setFotoWithUrl(this, it, imageHeaderNews) }
         titleNewsTextview.text = newsTopHeadline.title
         byLineNewsTextView.text = newsTopHeadline.author
         dateNewsTextView.text = TimeHelper.getDateFormatedNew(newsTopHeadline.publishedAt)
         contentNewsTextView.text = newsTopHeadline.description
+        urlNewsTextView.text = newsTopHeadline.url
     }
 
     @OnClick(R.id.backButton)

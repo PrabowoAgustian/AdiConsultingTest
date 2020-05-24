@@ -1,7 +1,6 @@
 package com.dirumahajanews.base.restapi
 
 import com.dirumahajanews.BuildConfig
-import com.dirumahajanews.constant.Constanta
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -40,11 +39,7 @@ object RestApiAdapter {
         get() {
             if (logging == null) logging = HttpLoggingInterceptor()
             logging!!.level =
-                if (BuildConfig.BUILD_TYPE == Constanta.buildType) {
-                    HttpLoggingInterceptor.Level.BODY
-                } else {
-                    HttpLoggingInterceptor.Level.NONE
-                }
+                HttpLoggingInterceptor.Level.BODY
             return logging!!
         }
 }
