@@ -44,9 +44,12 @@ class ListNewsAdapter (var newsTopHeadline: NewsTopHeadline) : AbstractItem<List
                 it, holder.newsImage)
         }
         holder.authorNews.text = TimeHelper.getDateFormatedNew(newsTopHeadline.publishedAt)?.let {
-            StringHelper.getStringBuilderToString(newsTopHeadline.author," | ",
-                it
-            )
+            newsTopHeadline.author?.let { it1 ->
+                StringHelper.getStringBuilderToString(
+                    it1," | ",
+                    it
+                )
+            }
         }
     }
 

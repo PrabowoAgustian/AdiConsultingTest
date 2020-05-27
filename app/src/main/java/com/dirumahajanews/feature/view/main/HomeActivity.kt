@@ -107,9 +107,12 @@ class HomeActivity : MainActivity<HomeViewModel>(), SwipeRefreshLayout.OnRefresh
             }
         }
         titleNewsTextview.text = list[0].title
-        subTitleNewsTextview.text = StringHelper.getStringBuilderToString(list[0].author," | ",
-            TimeHelper.getDateFormatedNew(list[0].publishedAt).toString()
-        )
+        subTitleNewsTextview.text = list[0].author?.let {
+            StringHelper.getStringBuilderToString(
+                it," | ",
+                TimeHelper.getDateFormatedNew(list[0].publishedAt).toString()
+            )
+        }
 
         imageHeaderNews.setOnClickListener {
             val intent = Intent(this, DetailNewsActivity::class.java)

@@ -6,7 +6,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class  NewsTopHeadline(
     var source: NewsSource,
-    var author: String = "",
+    var author: String? = null,
     var title: String = "",
     var description: String = "",
     var url: String = "",
